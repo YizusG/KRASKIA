@@ -18,6 +18,8 @@ jobs:
           node-version: '20'
       - name: Instalar dependencias
         run: npm install --no-audit --no-fund
+      - name: Preparar fotografía editorial KRASKIA 3.0
+        run: bash scripts/fetch-visuals.sh
       - name: Generar archivos de producción
         run: npm run build
       - name: Sincronizar rama publicable sin reescribir historial
