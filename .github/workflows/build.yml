@@ -16,3 +16,9 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Compilar
         run: npm run build
+      - name: Guardar sitio compilado
+        uses: actions/upload-artifact@v4
+        with:
+          name: kraskia-dist
+          path: dist/
+          if-no-files-found: error
