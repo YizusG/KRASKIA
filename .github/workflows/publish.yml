@@ -5,6 +5,9 @@ on:
     branches: [main]
 permissions:
   contents: write
+concurrency:
+  group: kraskia-production
+  cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -17,17 +20,21 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Generar archivos de producción
         run: npm run build
-      - name: Crear rama publicable
+      - name: Sincronizar rama publicable sin reescribir historial
         shell: bash
+        env:
+          REPO: ${{ github.repository }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          cd dist
+          git clone --quiet --branch production "https://x-access-token:${TOKEN}@github.com/${REPO}.git" /tmp/kraskia-production
+          rsync -a --delete --exclude='.git' dist/ /tmp/kraskia-production/
+          cd /tmp/kraskia-production
           touch .nojekyll
-          git init
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b production
           git add -A
-          git commit -m "Publicar KRASKIA: $GITHUB_SHA"
-          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-          git push --force origin HEAD:production
+          if ! git diff --cached --quiet; then
+            git commit -m "Publicar KRASKIA: ${GITHUB_SHA}"
+            git push origin HEAD:production
+          fi
