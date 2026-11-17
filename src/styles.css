@@ -269,3 +269,87 @@
   .hero-photo{left:8%;right:-70%;top:33%;opacity:.68}
   .hero-photo-brand{display:none}
 }
+
+
+/* KRASKIA 4.0 — traducción de la propuesta visual nº 3.
+   El esmeralda se reserva a la hoja de portafolio y a acentos; el coral sigue siendo la marca. */
+.hero{
+ background:radial-gradient(ellipse 40% 48% at 95% 25%,rgba(6,70,51,.22),transparent 78%),#0b0b0c;
+ min-height:760px; isolation:isolate;
+}
+.hero:after{background:none}
+.hero:before{
+ content:"";position:absolute;z-index:0;pointer-events:none;
+ width:460px;height:500px;left:-370px;top:-175px;
+ border-radius:48%;background:linear-gradient(125deg,#e66b41,#9c361b);
+ transform:rotate(-24deg);
+}
+.hero-glow{z-index:1!important;opacity:1!important;
+ background:linear-gradient(90deg,#0b0b0c 0%,rgba(11,11,12,.98) 18%,rgba(11,11,12,.85) 34%,rgba(11,11,12,.27) 60%,transparent 90%);
+}
+.hero-inner{min-height:750px}
+.hero-photo{
+ left:40%;right:-9%;top:13%;bottom:7%;border:0;border-radius:24px;
+ box-shadow:0 34px 98px rgba(0,0,0,.64);
+}
+.hero-photo img{
+ object-fit:cover;object-position:54% center;
+ filter:none;
+}
+.hero-photo:before{
+ background:linear-gradient(90deg,#0b0b0c 0%,rgba(11,11,12,.7) 17%,transparent 45%),
+ linear-gradient(0deg,rgba(8,9,10,.7),transparent 25%);
+}
+.hero-photo-glow{display:none}
+.hero-photo-brand{display:none}
+.hero-copy{max-width:720px}
+.hero h1{font-size:clamp(56px,6.5vw,93px);line-height:1.06;max-width:730px}
+.hero-copy>p{color:#dbc9be;font-size:15px;max-width:425px}
+.hero-actions .btn-primary{background:#e66b41;box-shadow:0 12px 34px #ae40274d}
+.hero-actions .text-link{
+ background:rgba(7,16,14,.53);border-color:#23b38f;
+ color:#f6e8d9;padding:15px 19px;
+}
+.hero-actions .text-link:hover{background:rgba(7,91,73,.7)}
+.nav-cta{background:rgba(3,20,19,.56);border:1px solid #1bc49b}
+.nav-cta:hover{background:#085e4d}
+.creative-paths{background:linear-gradient(180deg,transparent 0 86px,#0b0b0c 86px)}
+.creative-paths-grid{gap:18px}
+.creative-path{
+ min-height:298px;
+ border:1px solid #c965466a;border-radius:24px;
+ box-shadow:0 14px 35px #0009;
+ background:#131110;
+}
+.creative-path img{filter:none;opacity:1}
+.creative-path-shade,.creative-path--emerald .creative-path-shade{
+ background:linear-gradient(0deg,rgba(6,7,8,.94) 0%,rgba(6,7,8,.65) 24%,rgba(6,7,8,.04) 75%);
+}
+.creative-path--paprika:after{background:none}
+.creative-path--emerald{border-color:#18836893;background:#081d17}
+.creative-path--charcoal{border-color:#d26d496d;background:#19110f}
+.creative-path-content{gap:9px;padding:24px}
+.creative-path-content strong{font-size:clamp(25px,2vw,32px)}
+.creative-path--emerald .creative-path-kicker,.creative-path--emerald .creative-path-arrow{color:#6bd8b2}
+.creative-path--emerald .creative-path-arrow{border-color:#1ba786}
+@media(min-width:1051px){
+ .hero-photo{left:40%;right:-10%}
+ .hero-copy{padding-right:20px}
+}
+@media(max-width:760px){
+ .hero{min-height:760px}
+ .hero-photo{left:12%;right:-58%;top:29%;bottom:12%;opacity:.67}
+ .hero-photo:before{background:linear-gradient(90deg,rgba(11,11,12,.91),rgba(11,11,12,.55) 60%,transparent),linear-gradient(0deg,rgba(11,11,12,.6),transparent 50%)}
+ .hero h1{font-size:clamp(45px,9vw,72px)}
+ .hero:before{left:-405px;top:-230px}
+ .creative-paths{background:linear-gradient(180deg,transparent 0 50px,#0b0b0c 50px)}
+ .creative-paths-grid{gap:10px}
+ .creative-path{min-height:230px}
+}
+@media(max-width:570px){
+ .hero-photo{left:-2%;right:-94%;top:35%;bottom:10%;opacity:.53}
+ .hero h1{font-size:clamp(43px,10vw,58px)}
+ .creative-paths{background:linear-gradient(180deg,transparent 0 30px,#0b0b0c 30px)}
+ .creative-path{min-height:178px}
+ .creative-path-content{padding:21px}
+}
