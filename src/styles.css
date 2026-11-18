@@ -116,3 +116,34 @@
 @media (prefers-reduced-motion:reduce){
   .hero-photo,.hero-photo img{transition:none}
 }
+
+
+/* KRASKIA · quinto servicio: solo redistribución de las tarjetas en sección 01.
+   Las cuatro tarjetas originales conservan su fotografía, texto y estilos. */
+.services-grid--five{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:13px;
+}
+.services-grid--five > .service-card{
+  flex:0 1 calc((100% - 52px)/5);
+  min-width:0;
+}
+.service-smart{background:linear-gradient(140deg,#2c1d16,#0d1a14 80%)}
+.service-smart:after{background:radial-gradient(circle at 75% 0%,#dc71385c,transparent 70%)}
+.service-smart:hover{border-color:#e88454}
+.service-smart .service-image{object-position:52% center}
+.service-smart .service-bottom h3{font-size:20px;line-height:1.16}
+.service-smart .service-bottom p{font-size:11px;line-height:1.55}
+@media(max-width:1100px){
+  .services-grid--five > .service-card{flex-basis:calc((100% - 26px)/3)}
+}
+@media(max-width:760px){
+  .services-grid--five > .service-card{flex-basis:calc((100% - 13px)/2)}
+}
+@media(max-width:500px){
+  .services-grid--five .service-smart{min-height:355px}
+  .services-grid--five .service-smart .service-bottom h3{font-size:18px}
+  .services-grid--five .service-smart .service-bottom p{font-size:10.5px;line-height:1.45}
+}
