@@ -69,3 +69,33 @@
 .photo-page .photo-applications .photo-section-copy h2{font-size:24px;line-height:1.13;letter-spacing:-.055em;white-space:normal;overflow-wrap:break-word;max-width:100%;}
 @media(max-width:900px){.photo-page .photo-applications .photo-section-copy h2{font-size:28px;}}
 @media(max-width:640px){.photo-page .photo-applications .photo-section-copy h2{font-size:27px;}}
+
+/* Realce cinematográfico coherente: hero, comparación, aplicaciones y galería.
+   Se conservan tamaños y retículas. No afecta la página principal. */
+.photo-page .photo-hero{overflow:hidden}
+.photo-page .photo-hero-image,
+.photo-page .photo-before-after img,
+.photo-page .photo-image-card img,
+.photo-page .photo-gallery-item img{
+  transition: transform .65s cubic-bezier(.2,.65,.2,1), filter .65s ease;
+  transform-origin:center center;
+}
+.photo-page .photo-gallery-item{
+  display:block;margin:0;min-width:0;height:225px;
+  border-radius:16px;border:1px solid #467c606d;overflow:hidden;
+}
+.photo-page .photo-gallery-item img{height:100%;width:100%;border:0;border-radius:0;object-fit:cover}
+@media(hover:hover) and (pointer:fine){
+  .photo-page .photo-hero:hover .photo-hero-image{transform:scale(1.035);filter:saturate(1.12) brightness(1.04)}
+  .photo-page .photo-before-after figure:hover img,
+  .photo-page .photo-image-card:hover img,
+  .photo-page .photo-gallery-item:hover img{transform:scale(1.065);filter:saturate(1.17) brightness(1.06)}
+}
+@media(max-width:640px){
+  .photo-page .photo-gallery-item{height:160px}
+  .photo-page .photo-gallery-item:last-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .photo-page .photo-hero-image,.photo-page .photo-before-after img,
+  .photo-page .photo-image-card img,.photo-page .photo-gallery-item img{transition:none}
+}
