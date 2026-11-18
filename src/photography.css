@@ -1,0 +1,56 @@
+/* KRASKIA servicio Fotografía con IA — CSS totalmente encapsulado.
+   No modifica estilos de la página principal. */
+.photo-page{--p-cream:#f6e8d9;--p-coral:#fa6f43;--p-green:#13664e;background:#06120f;color:var(--p-cream);font-family:'DM Sans',sans-serif;min-height:100vh;overflow:hidden}
+.photo-page *, .photo-page *::before,.photo-page *::after{box-sizing:border-box}
+.photo-page a{color:inherit;text-decoration:none}
+.photo-page img{display:block;width:100%;object-fit:cover}
+.photo-wrap{max-width:1210px;width:calc(100% - 96px);margin-inline:auto}
+.photo-nav{height:86px;max-width:1210px;width:calc(100% - 96px);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:25px;position:relative;z-index:3}
+.photo-brand{display:inline-flex;align-items:center;gap:13px;font-family:Montserrat,sans-serif;font-weight:800;font-size:27px;letter-spacing:.065em;white-space:nowrap;line-height:1}
+.photo-brand small{display:block;font-size:8px;letter-spacing:.35em;font-weight:500;margin-top:7px}
+.photo-brand-symbol{width:38px;height:38px;position:relative;flex:none;transform:rotate(-15deg)}
+.photo-brand-symbol i{width:15px;height:15px;position:absolute;background:#f96c45;border-radius:5px 10px 5px 10px}
+.photo-brand-symbol i:nth-child(1){top:2px;left:2px}.photo-brand-symbol i:nth-child(2){top:2px;right:2px;transform:rotate(90deg)}.photo-brand-symbol i:nth-child(3){bottom:2px;left:2px;transform:rotate(90deg)}.photo-brand-symbol i:nth-child(4){bottom:2px;right:2px}
+.photo-nav nav{display:flex;gap:35px;font-size:13px}
+.photo-nav nav a{padding:12px 0}.photo-nav nav a:hover,.photo-nav nav a[aria-current=page]{color:#f38a64}
+.photo-back{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:#e5c7b6!important}
+.photo-hero{min-height:510px;position:relative;display:flex;align-items:center;margin-top:-86px;padding-top:86px;isolation:isolate}
+.photo-hero-image{position:absolute;inset:0;height:100%;z-index:-3}
+.photo-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#00140fe8 0%,#00130dc4 33%,#00130d29 68%,#04120938 100%),linear-gradient(0deg,#07130ff0,transparent 24%)}
+.photo-hero-content{padding-block:98px 75px}
+.photo-kicker{letter-spacing:.28em;font-size:11px;font-weight:600;display:flex;align-items:center;gap:13px;color:#f0cbbb}
+.photo-kicker span{width:35px;height:2px;background:var(--p-coral);display:block}
+.photo-hero h1{font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(56px,7.5vw,110px);max-width:545px;letter-spacing:-.065em;font-style:italic;line-height:.96;margin:24px 0 20px}
+.photo-page h1 em,.photo-page h2 em{color:var(--p-coral);font-style:inherit}
+.photo-hero-content>p:not(.photo-kicker){font-size:17px;line-height:1.65;max-width:375px}
+.photo-text-link{display:inline-flex;gap:15px;align-items:center;font-size:13px;font-weight:650;margin-top:10px;border-bottom:1px solid #f87453;padding-bottom:8px}
+.photo-block{display:grid;grid-template-columns:225px minmax(0,1fr);gap:35px;margin-block:60px 78px;align-items:start}
+.photo-block h2{font-family:Montserrat,sans-serif;font-weight:800;font-style:italic;font-size:clamp(30px,3.4vw,47px);line-height:1.05;letter-spacing:-.055em;margin:0;max-width:220px}
+.photo-benefit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.photo-benefit-card{border:1px solid #428c766d;border-radius:17px;padding:25px 24px 23px;min-height:172px;background:linear-gradient(135deg,#0631268a,#0a1916bb)}
+.photo-benefit-card svg{color:var(--p-coral)}
+.photo-benefit-card h3{font-size:17px;font-family:Montserrat,sans-serif;margin:15px 0 10px;letter-spacing:-.03em}
+.photo-benefit-card p,.photo-section-copy p{font-size:13px;line-height:1.67;color:#cfc6bb;margin:0}
+.photo-section-copy h2{margin-bottom:16px}.photo-rule{width:42px;height:3px;background:var(--p-coral);display:block;margin-bottom:25px}.photo-section-copy p{max-width:220px}.photo-section-copy small{display:block;margin-top:14px;font-size:11px;line-height:1.6;color:#ac958a}
+.photo-before-after{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative}
+.photo-before-after figure{margin:0;position:relative;height:318px;overflow:hidden;border-radius:20px;border:1px solid #a7735b5c;background:#232222}
+.photo-before-after img{height:100%}
+.photo-before-after figcaption{position:absolute;top:15px;left:15px;border-radius:99px;background:#201c1bce;color:white;font-weight:700;padding:8px 16px;letter-spacing:.15em;font-size:10px}
+.photo-before-after figure:last-child figcaption{background:#f96c45}
+.photo-compare-arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:#fa714c;border-radius:50%;display:grid;place-items:center;z-index:3;border:2px solid #fbcbb5}
+.photo-app-grid,.photo-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.photo-image-card{position:relative;min-height:295px;border-radius:18px;overflow:hidden;border:1px solid #428c766d;background:#0a2b21}
+.photo-image-card img{height:295px}
+.photo-image-card:after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 38%,#07130ff0)}
+.photo-image-card>div{position:absolute;z-index:2;bottom:17px;left:20px;right:16px}
+.photo-image-card h3{font-size:18px;font-family:Montserrat,sans-serif;margin:0 0 8px}.photo-image-card p{font-size:12px;line-height:1.5;color:#dfd7cc;margin:0}
+.photo-gallery-grid img{height:225px;border-radius:16px;border:1px solid #467c606d}
+.photo-cta{background:radial-gradient(ellipse at 0% 100%,#00855c83,transparent 40%),radial-gradient(ellipse at 100% 50%,#f5673e99,transparent 38%),#071a14;border-top:1px solid #376c5c;min-height:245px;display:grid;align-items:center}
+.photo-cta-content{display:flex;justify-content:space-between;align-items:center;gap:35px;padding-block:48px}
+.photo-cta h2{font-family:Montserrat,sans-serif;font-size:clamp(28px,3.5vw,46px);font-style:italic;line-height:1.13;max-width:740px;margin:10px 0 0;letter-spacing:-.045em}
+.photo-cta-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;white-space:nowrap;border-radius:99px;padding:18px 28px;background:var(--p-coral);color:white!important;font-weight:700;box-shadow:0 10px 22px #120e0b44}
+.photo-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-block:32px;color:#bca69c;font-size:12px}
+.photo-footer .photo-brand{font-size:20px;color:var(--p-cream)}.photo-footer .photo-brand-symbol{transform:scale(.8) rotate(-15deg)}
+.photo-footer a:hover{color:var(--p-coral)}
+@media(max-width:900px){.photo-nav nav{gap:16px}.photo-back{display:none}.photo-block{grid-template-columns:1fr;gap:25px}.photo-block h2{max-width:none}.photo-section-copy p{max-width:540px}.photo-hero{min-height:530px}}
+@media(max-width:640px){.photo-wrap,.photo-nav{width:calc(100% - 36px)}.photo-nav{height:73px}.photo-brand{font-size:20px}.photo-brand small{font-size:6px}.photo-brand-symbol{transform:scale(.76) rotate(-15deg);margin-right:-5px}.photo-nav nav{gap:12px;font-size:11px}.photo-nav nav a:nth-child(3),.photo-nav nav a:nth-child(4){display:none}.photo-hero{margin-top:-73px;padding-top:73px;min-height:515px}.photo-hero-shade{background:linear-gradient(90deg,#00140ff2,#00130dac 70%,#04120965),linear-gradient(0deg,#07130fed,transparent 35%)}.photo-hero-content{padding-block:100px 55px}.photo-hero h1{font-size:57px}.photo-hero-content>p:not(.photo-kicker){font-size:14px;max-width:310px}.photo-block{margin-block:45px 58px}.photo-benefit-grid{grid-template-columns:1fr}.photo-benefit-card{min-height:0}.photo-before-after{gap:9px}.photo-before-after figure{height:230px;border-radius:12px}.photo-before-after figcaption{font-size:8px;padding:6px 9px}.photo-compare-arrow{width:35px;height:35px}.photo-app-grid,.photo-gallery-grid{grid-template-columns:1fr 1fr;gap:11px}.photo-image-card{min-height:220px}.photo-image-card img{height:220px}.photo-image-card>div{left:12px;bottom:12px;right:10px}.photo-image-card h3{font-size:14px}.photo-image-card p{font-size:10px}.photo-gallery-grid img{height:160px}.photo-gallery-grid img:last-child{display:none}.photo-cta-content{flex-direction:column;align-items:flex-start}.photo-cta h2{font-size:28px}.photo-footer{flex-direction:column;align-items:flex-start}}
