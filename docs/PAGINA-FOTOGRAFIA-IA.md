@@ -11,9 +11,9 @@ Estado: **rama de prueba, no publicada**.
 - Ruta de retorno: `/#servicios`.
 - Enlace de contacto: `/#contacto`. No inventa WhatsApp ni datos.
 
-## Recursos visuales pendientes de añadir antes de publicación
+## Recursos visuales incorporados a la rama de prueba
 
-La imagen de referencia fue aprobada y el paquete de fotografías optimizadas está listo para revisión por separado. Este repositorio **aún no contiene** los archivos fotográficos nuevos. Deben colocarse en `public/images/fotografia-ia/` con estos nombres:
+Las nueve imágenes optimizadas aprobadas ya están en `public/images/fotografia-ia/` con estos nombres:
 
 ```
 hero.webp
@@ -27,13 +27,13 @@ galeria-granos.webp
 galeria-crema.webp
 ```
 
-Mientras esos archivos estén pendientes, la página usa imágenes alternativas del sitio para evitar imágenes rotas en la rama de prueba; no se debe aprobar publicación por apariencia hasta completar los recursos.
+La página carga estos archivos directamente. Si faltara alguno, hay una imagen alternativa del sitio únicamente como protección técnica; los nueve archivos están presentes en esta rama.
 
 Las imágenes de **antes y después** son conceptuales, no fotografías de un mismo producto tomadas en dos momentos.
 
 ## Verificación antes de incorporar a main
 
-1. Cargar los archivos optimizados aprobados en esta misma rama.
+1. Verificar que los nueve recursos carguen correctamente.
 2. Revisar en ordenador y móvil, en especial textos, recortes y navegación.
 3. Confirmar que la portada de KRASKIA no cambió, salvo la posibilidad de abrir el módulo 01.
 4. Aprobar explícitamente la página y entonces fusionar a main y desplegar. No hacerlo automáticamente.
