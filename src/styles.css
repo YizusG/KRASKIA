@@ -63,3 +63,31 @@
  .project-visual{border-radius:22px}
  .hero-footnote{margin-top:86px}
 }
+
+
+/* KRASKIA — prueba cromática mínima, 2026-11-18.
+   Solo superficies y bordes. No modifica fotografías, estructura, dimensiones,
+   tipografía, márgenes, posiciones ni estilos responsive. Restaurable desde backup/. */
+:root{
+  --kraskia-emerald:#087f65;
+  --kraskia-emerald-soft:#37b48f;
+}
+.services{
+  background:linear-gradient(110deg,#111011 0%,#0e1513 68%,#111011 100%);
+}
+.work{
+  background:linear-gradient(140deg,#0c0b0d 0%,#0a1411 100%);
+}
+.nav-cta{border-color:rgba(55,180,143,.55)}
+.nav-cta:hover{background:#0b6553;border-color:#37b48f}
+.hero-actions .text-link:hover{color:#70d4ad}
+.services-grid .service-card:nth-child(2):hover,
+.services-grid .service-card:nth-child(4):hover{
+  border-color:rgba(55,180,143,.7);
+}
+.project-card:nth-child(even) .project-visual{
+  box-shadow:0 18px 42px #0006,0 0 0 1px rgba(55,180,143,.18);
+}
+.filter-bar button:not(.active):hover{
+  background:#0e3b30;border-color:#37b48f;color:#f6e8d9;
+}
