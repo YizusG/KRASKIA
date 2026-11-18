@@ -4,7 +4,9 @@ import './photography.css';
 
 // Archivos aprobados: se incorporarán en public/images/fotografia-ia/
 // antes de publicar esta página. Nunca reemplazar imágenes del sitio original.
-const base='./images/fotografia-ia/';
+// Hostinger entrega el sitio desde public_html/index.php, pero los archivos
+// de la rama production se encuentran en public_html/kraskia/images.
+const base='/kraskia/images/fotografia-ia/';
 const photos={
  hero:'hero.webp', original:'antes.webp', enhanced:'despues.webp',
  coffee:'aplicacion-cafe.webp', cosmetics:'aplicacion-cosmetica.webp',
@@ -12,7 +14,20 @@ const photos={
  gallery2:'galeria-granos.webp', gallery3:'galeria-crema.webp'
 };
 function Photo({name,alt,className='',fallback}) {
- return <img className={className} src={base+photos[name]} alt={alt} loading={name==='hero'?'eager':'lazy'} decoding="async" onError={event=>{if(fallback && !event.currentTarget.dataset.fallback){event.currentTarget.dataset.fallback='1';event.currentTarget.src=fallback;}}}/>;
+ const file=photos[name];
+ const candidates=[
+   base+file,
+   '/images/fotografia-ia/'+file,
+   './images/fotografia-ia/'+file,
+   ...(fallback ? ['/kraskia'+fallback.replace(/^\./,'').replace(/^\/kraskia/,''),
+                     fallback] : [])
+ ];
+ const handleError=event=>{
+   const img=event.currentTarget;
+   const next=(Number(img.dataset.attempt)||0)+1;
+   if(next<candidates.length){img.dataset.attempt=String(next);img.src=candidates[next];}
+ };
+ return <img className={className} src={candidates[0]} alt={alt} loading={name==='hero'?'eager':'lazy'} decoding="async" onError={handleError}/>;
 }
 const benefits=[
  {icon:Camera,title:'Imágenes que venden',text:'Fotografías de alto impacto para destacar las cualidades de tus productos.'},
