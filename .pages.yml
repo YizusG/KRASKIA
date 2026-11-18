@@ -1,0 +1,93 @@
+# KRASKIA Studio Manager · etapa 1
+# Configuración independiente para Pages CMS.
+# Esta rama de prueba NO conecta aún los contenidos con la web pública.
+media:
+  input: public/images/projects
+  output: /images/projects
+  rename: safe
+  categories: [image]
+
+content:
+  - name: proyectos
+    label: Proyectos de KRASKIA
+    type: collection
+    path: content/projects
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: title
+      fields: [title, category, status, order]
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Nombre del proyecto
+        type: string
+        required: true
+      - name: brand
+        label: Marca o cliente
+        type: string
+      - name: category
+        label: Categoría del portafolio
+        type: select
+        required: true
+        options:
+          values:
+            - name: Imagen
+              label: Fotografía e imagen
+            - name: Video
+              label: Video publicitario
+            - name: Identidad
+              label: Identidad y campañas
+      - name: format
+        label: Formato del contenido
+        type: select
+        options:
+          values:
+            - name: image
+              label: Imagen fija
+            - name: vertical
+              label: Video vertical 9:16
+            - name: horizontal
+              label: Video horizontal 16:9
+      - name: subtitle
+        label: Concepto o subtítulo
+        type: string
+      - name: description
+        label: Descripción del proyecto
+        type: text
+      - name: cover
+        label: Imagen de portada
+        type: image
+        description: Elegir imagen de la biblioteca o subir una nueva.
+      - name: original_photo
+        label: Fotografía original (opcional)
+        type: image
+      - name: improved_photo
+        label: Imagen mejorada con IA (opcional)
+        type: image
+      - name: youtube_url
+        label: Enlace de YouTube
+        type: string
+        description: Pegar enlace completo de YouTube; los videos no se alojarán en Hostinger.
+      - name: authorized
+        label: Autorización de uso de marca confirmada
+        type: boolean
+      - name: status
+        label: Estado
+        type: select
+        required: true
+        options:
+          values:
+            - name: draft
+              label: Borrador
+            - name: review
+              label: En revisión
+            - name: published
+              label: Publicado
+      - name: order
+        label: Orden de aparición
+        type: number
+        description: Número menor = aparece antes.
