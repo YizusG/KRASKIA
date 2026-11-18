@@ -4,7 +4,7 @@ import { ArrowUpRight, ArrowRight, ArrowDown, Menu, X, Sparkles, Aperture, Film,
 const services = [
   { number:'01', icon:Aperture, title:'Fotografía con IA', text:'Imágenes de producto y campañas visuales que llevan tu marca a nuevos escenarios.', tone:'rose', image:'producto-emerald.webp' },
   { number:'02', icon:Film, title:'Videos publicitarios', text:'Piezas audiovisuales de alto impacto creadas para despertar atención y generar recordación.', tone:'orange', image:'hero.webp' },
-  { number:'03', icon:MonitorPlay, title:'Reels y contenido social', text:'Ideas en formato vertical para comunicar tu mensaje de manera ágil y atractiva.', tone:'violet', image:'naturaleza.webp' },
+  { number:'03', icon:MonitorPlay, title:'Reels y contenido social', text:'Ideas en formato vertical para comunicar tu mensaje de manera ágil y atractiva.', tone:'violet', image:'cafe-reels.avif' },
   { number:'04', icon:Palette, title:'Identidad y campañas', text:'Conceptos, dirección visual y piezas publicitarias con una personalidad propia.', tone:'sand', image:'branding.webp' },
 ];
 
