@@ -99,3 +99,24 @@
   .photo-page .photo-hero-image,.photo-page .photo-before-after img,
   .photo-page .photo-image-card img,.photo-page .photo-gallery-item img{transition:none}
 }
+
+/* Corrección móvil: la regla heredada img:last-child ocultaba todas las fotos,
+   porque cada imagen es el último elemento de su contenedor figure. */
+@media(max-width:640px){
+ .photo-page .photo-gallery-grid .photo-gallery-item{
+   display:block;
+   min-width:0;
+   height:160px;
+ }
+ .photo-page .photo-gallery-grid .photo-gallery-item img{
+   display:block;
+   width:100%;
+   height:100%;
+   object-fit:cover;
+ }
+ .photo-page .photo-gallery-grid .photo-gallery-item:last-child{
+   display:block;
+   grid-column:1 / -1;
+   height:210px;
+ }
+}
