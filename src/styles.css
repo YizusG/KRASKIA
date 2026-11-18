@@ -63,35 +63,3 @@
  .project-visual{border-radius:22px}
  .hero-footnote{margin-top:86px}
 }
-
-
-/* KRASKIA · equilibrio cromático selectivo (versión conservadora).
-   Mantiene íntegros el diseño, las imágenes y el orden de la versión original.
-   El esmeralda nunca se aplica como filtro sobre fotografías. */
-:root {
-  --k-emerald: #087f65;
-  --k-emerald-bright: #38c89d;
-  --k-emerald-dark: #092c26;
-}
-/* Resplandor tenue y periférico, detrás de la foto original. */
-.hero {
-  background:
-    radial-gradient(ellipse 23% 34% at 95% 75%,rgba(8,127,101,.14),transparent 88%),
-    radial-gradient(ellipse at 80% 56%,#58291f 0%,#1e1010 41%,#0b0b0c 78%);
-}
-.hero-photo { border-color:rgba(80,172,132,.24); }
-.hero-photo img { filter:saturate(.95) contrast(1.02); }
-/* Botón principal paprika; verde reservado para bordes e interacción secundarios. */
-.hero-actions .text-link { border-bottom:1px solid rgba(56,200,157,.65);padding-bottom:6px; }
-.hero-actions .text-link:hover { color:#8be4c2; }
-.nav-cta { border-color:rgba(63,162,126,.55); }
-.nav-cta:hover { background:var(--k-emerald-dark); }
-/* Fondos discretamente frescos, tarjetas y fotos sin filtros ni cambios estructurales. */
-.services { background:linear-gradient(145deg,#111011 0%,#101311 78%,#111011 100%); }
-.services-grid .service-card:nth-child(3):hover { border-color:rgba(56,200,157,.72); }
-.work { background:linear-gradient(155deg,#0c0b0d 0%,#0b1110 100%); }
-.project-card:nth-child(4) .project-visual { box-shadow:0 18px 42px #0006,0 0 0 1px rgba(56,200,157,.24); }
-.about-values span:nth-child(2){color:#87cfad}
-@media(max-width:760px){
-  .hero { background:radial-gradient(ellipse 28% 25% at 100% 80%,rgba(8,127,101,.12),transparent),radial-gradient(ellipse at 80% 56%,#58291f,#0b0b0c 78%); }
-}
