@@ -8,7 +8,7 @@ Se reemplazan las imágenes 1 y 2 por:
 - `public/images/fotografia-ia/galeria-reposteria.webp`: cupcake de chocolate con frambuesas.
 - `public/images/fotografia-ia/galeria-refrescos.webp`: bebidas de frutas con hielo y menta.
 
-**Pendiente:** incorporar físicamente los archivos WebP al repositorio antes de fusionar la rama. Existen en un paquete ZIP de recursos listo para subir. No fusionar mientras falten: el navegador mostraría imágenes alternativas. La tercera imagen actual se conserva.
+**Recursos incorporados:** ambos archivos WebP ya están en esta rama. Verificar existencia y carga durante CI y despliegue. La tercera imagen actual se conserva.
 
 ## Interacción
 
