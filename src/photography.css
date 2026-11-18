@@ -58,3 +58,8 @@
 /* Clic en cualquier zona del módulo 01, sin alterar su apariencia. */
 .service-card-link{position:absolute;inset:0;display:block;z-index:8;border-radius:inherit}
 .service-card-link:focus-visible{outline:3px solid #ff8b63;outline-offset:-5px}
+
+/* Ajuste localizado: evitar que «Aplicaciones» invada la retícula, sin mover tarjetas. */
+.photo-applications .photo-section-copy h2{font-size:30px;letter-spacing:-.045em;white-space:nowrap}
+@media(max-width:900px){.photo-applications .photo-section-copy h2{font-size:clamp(30px,5vw,43px)}}
+@media(max-width:640px){.photo-applications .photo-section-copy h2{font-size:34px}}
