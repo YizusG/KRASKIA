@@ -65,291 +65,33 @@
 }
 
 
-/* KRASKIA 3.0 — exploración aprobable: paprika + esmeralda profundo.
-   Sin sustitución del logotipo, textos, fotografías ni estructura comercial. */
-:root{
-  --k-carbon:#0b0b0c;
-  --k-paprika:#e66b41;
-  --k-cream:#f6e8d9;
-  --k-emerald:#087f65;
-  --k-emerald-deep:#064b40;
-  --k-emerald-light:#1bbf9a;
+/* KRASKIA · equilibrio cromático selectivo (versión conservadora).
+   Mantiene íntegros el diseño, las imágenes y el orden de la versión original.
+   El esmeralda nunca se aplica como filtro sobre fotografías. */
+:root {
+  --k-emerald: #087f65;
+  --k-emerald-bright: #38c89d;
+  --k-emerald-dark: #092c26;
 }
-/* Hero: el coral sigue llevando el mensaje; el esmeralda crea profundidad. */
-.hero{
+/* Resplandor tenue y periférico, detrás de la foto original. */
+.hero {
   background:
-    radial-gradient(ellipse 32% 50% at 8% 83%,#087f6530 0%,transparent 78%),
-    radial-gradient(ellipse 37% 60% at 94% 49%,#06534550 0%,transparent 77%),
+    radial-gradient(ellipse 23% 34% at 95% 75%,rgba(8,127,101,.14),transparent 88%),
     radial-gradient(ellipse at 80% 56%,#58291f 0%,#1e1010 41%,#0b0b0c 78%);
 }
-.hero::after{
-  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 28% 45% at 94% 15%,#0d9e7440,transparent 80%);
-}
-.hero-photo{
-  border-color:#2c947443;
-  box-shadow:0 24px 90px #000a,-14px 19px 88px #087f651c,12px -10px 68px #e55e2725;
-}
-.hero-photo-glow{
-  background:radial-gradient(ellipse at center,#e66b416b,#087f6540 63%,transparent 83%);
-  width:68%;height:75%;right:-20%;top:4%;filter:blur(67px);
-}
-/* Acciones: primaria paprika, secundaria delineada en esmeralda. */
-.hero-actions .text-link{
-  border:1px solid #22a68799;border-radius:999px;padding:15px 20px;
-  color:var(--k-cream);background:#06362f51;
-  transition:background .2s,border-color .2s,transform .2s;
-}
-.hero-actions .text-link:hover,.hero-actions .text-link:focus-visible{
-  background:#075848a6;border-color:var(--k-emerald-light);transform:translateY(-2px);
-}
-.hero-actions .text-link svg{color:#4ee0b4}
-/* Tarjetas: contraste editorial sin teñir todas las fotos de un mismo color. */
-.services{background:linear-gradient(135deg,#111011 0%,#0d1715 50%,#111011 100%)}
-.services-grid .service-card:nth-child(2),
-.services-grid .service-card:nth-child(3){border-color:#2a9b7859}
-.services-grid .service-card:nth-child(2):after{
-  background:radial-gradient(circle at 93% 5%,#087f6580,transparent 68%);
-}
-.services-grid .service-card:nth-child(3):after{
-  background:radial-gradient(circle at 90% 0,#1bbf9a4f,transparent 66%);
-}
-.services-grid .service-card:nth-child(2) .service-top svg,
-.services-grid .service-card:nth-child(3) .service-top svg{
-  background:#073e3688;border-color:#45c39f80;
-}
-.services-grid .service-card:nth-child(2) .service-arrow,
-.services-grid .service-card:nth-child(3) .service-arrow{
-  color:#6ae0b9;border-color:#289f8066;
-}
-.services-grid .service-card:hover{border-color:#34b28b}
-.work{background:linear-gradient(155deg,#0c0b0d 40%,#0c1b18 100%)}
-.project-card:nth-child(4) .project-visual{
-  box-shadow:0 18px 42px #0006,0 0 0 1px #087f6570;
-}
-.project-card:nth-child(4) .project-visual:after{
-  background:linear-gradient(140deg,#075a4638,transparent 42%),linear-gradient(0deg,#08060882,transparent 35%);
-}
-.project-card:nth-child(4) .project-type{color:#6cc5a9}
-/* Ajustes responsivos: mantener la lectura del hero en pantallas pequeñas. */
+.hero-photo { border-color:rgba(80,172,132,.24); }
+.hero-photo img { filter:saturate(.95) contrast(1.02); }
+/* Botón principal paprika; verde reservado para bordes e interacción secundarios. */
+.hero-actions .text-link { border-bottom:1px solid rgba(56,200,157,.65);padding-bottom:6px; }
+.hero-actions .text-link:hover { color:#8be4c2; }
+.nav-cta { border-color:rgba(63,162,126,.55); }
+.nav-cta:hover { background:var(--k-emerald-dark); }
+/* Fondos discretamente frescos, tarjetas y fotos sin filtros ni cambios estructurales. */
+.services { background:linear-gradient(145deg,#111011 0%,#101311 78%,#111011 100%); }
+.services-grid .service-card:nth-child(3):hover { border-color:rgba(56,200,157,.72); }
+.work { background:linear-gradient(155deg,#0c0b0d 0%,#0b1110 100%); }
+.project-card:nth-child(4) .project-visual { box-shadow:0 18px 42px #0006,0 0 0 1px rgba(56,200,157,.24); }
+.about-values span:nth-child(2){color:#87cfad}
 @media(max-width:760px){
-  .hero{background:radial-gradient(ellipse at 90% 70%,#0757465c,transparent 58%),radial-gradient(ellipse at 85% 40%,#58291f,#0b0b0c 75%)}
-  .hero-actions .text-link{padding:12px 16px}
-  .hero-photo{border-color:#2c947433}
-}
-@media(prefers-reduced-motion:reduce){
-  .hero-actions .text-link{transition:none}
-}
-
-
-/* KRASKIA 3.0 · navegación editorial basada en la tercera dirección visual */
-.creative-paths{
-  position:relative;z-index:5;
-  padding:0 0 30px;
-  margin-top:-86px;
-  background:linear-gradient(180deg,transparent 0 86px,#0c0b0d 86px 100%);
-}
-.creative-paths-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.creative-path{
-  position:relative;isolation:isolate;overflow:hidden;min-height:285px;
-  border-radius:24px;display:flex;align-items:end;
-  border:1px solid #eea47a55;
-  box-shadow:0 17px 48px #0009;
-  transition:transform .3s,border-color .3s,box-shadow .3s;
-}
-.creative-path:hover,.creative-path:focus-visible{
-  transform:translateY(-5px);border-color:#f69c6a;
-  box-shadow:0 24px 50px #000a;
-}
-.creative-path img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;filter:saturate(.92) contrast(1.05);transition:transform .55s}
-.creative-path:hover img{transform:scale(1.06)}
-.creative-path-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#08090aed 0%,#0b0d0bd2 39%,#140d0d2d 100%)}
-.creative-path--paprika{background:#3b1b14}
-.creative-path--paprika:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(135deg,#df68372e,transparent 70%)}
-.creative-path--emerald{background:#073d35;border-color:#28b68c8a}
-.creative-path--emerald .creative-path-shade{background:linear-gradient(0deg,#051f1af7 0%,#062e2bc4 45%,#075b4930 100%)}
-.creative-path--emerald:hover,.creative-path--emerald:focus-visible{border-color:#5bdfb7;box-shadow:0 22px 55px #024c3a66}
-.creative-path--charcoal{background:#161617}
-.creative-path-content{display:flex;flex-direction:column;align-items:start;gap:12px;padding:25px;max-width:100%;color:var(--k-cream)}
-.creative-path-kicker{font-size:9px;letter-spacing:.2em;color:#f1ab8a;font-weight:800}
-.creative-path--emerald .creative-path-kicker{color:#72e2ba}
-.creative-path-content strong{font:800 clamp(23px,2.1vw,31px)/1.1 Montserrat,sans-serif;letter-spacing:-.04em}
-.creative-path-content>span:not(.creative-path-kicker):not(.creative-path-arrow){font-size:12px;line-height:1.65;color:#e8ddd6;max-width:270px}
-.creative-path-arrow{width:36px;height:36px;border:1px solid #df805e87;border-radius:50%;display:grid;place-items:center;color:#fba277}
-.creative-path--emerald .creative-path-arrow{color:#77ebc1;border-color:#48ba94}
-@media(max-width:760px){
-  .creative-paths{margin-top:-50px;padding-bottom:20px;background:linear-gradient(180deg,transparent 0 50px,#0c0b0d 50px)}
-  .creative-paths-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
-  .creative-path{min-height:235px;border-radius:17px}
-  .creative-path-content{padding:14px;gap:9px}
-  .creative-path-content strong{font-size:19px}
-  .creative-path-content>span:not(.creative-path-kicker):not(.creative-path-arrow){font-size:10px}
-  .creative-path-kicker{font-size:8px}
-  .creative-path-arrow{height:30px;width:30px}
-}
-@media(max-width:570px){
-  .creative-paths{margin-top:-30px;background:linear-gradient(180deg,transparent 0 30px,#0c0b0d 30px)}
-  .creative-paths-grid{grid-template-columns:1fr;gap:12px}
-  .creative-path{min-height:175px}
-  .creative-path-content{padding:20px;gap:7px}
-  .creative-path-content strong{font-size:25px}
-  .creative-path-content>span:not(.creative-path-kicker):not(.creative-path-arrow){font-size:11px}
-  .creative-path-arrow{position:absolute;right:20px;bottom:20px}
-}
-@media(prefers-reduced-motion:reduce){.creative-path,.creative-path img{transition:none}}
-
-
-/* KRASKIA 3.1 · Fotografía auténtica, no tintado esmeralda sobre imágenes antiguas.
-   El coral es la firma; el verde existe en la escena y en los acentos de UI. */
-.hero{
-  background:
-    radial-gradient(ellipse 42% 68% at 90% 35%,rgba(7,49,39,.22),transparent 85%),
-    radial-gradient(ellipse 28% 38% at 0% 94%,rgba(180,53,26,.2),transparent 84%),
-    #0b0b0c;
-}
-.hero::after{
-  background:
-    radial-gradient(ellipse 18% 32% at 101% 4%,rgba(4,121,87,.1),transparent 90%);
-}
-.hero-glow{background:linear-gradient(90deg,#0b0b0c 0%,#0b0b0c 24%,#0b0b0cc9 42%,transparent 83%)}
-.hero-photo{
-  left:43%;top:15%;right:-12%;bottom:8%;border-radius:32px;
-  border:1px solid rgba(241,161,115,.22);
-  box-shadow:0 30px 95px rgba(0,0,0,.64),0 0 45px rgba(22,144,107,.08);
-}
-.hero-photo img{filter:none;object-position:52% center}
-.hero-photo:before{
-  background:linear-gradient(90deg,#0b0b0c 1%,rgba(11,11,12,.84) 15%,rgba(11,11,12,.32) 43%,transparent 72%),linear-gradient(0deg,rgba(7,8,8,.5),transparent 39%);
-}
-.hero-photo-glow{display:none}
-.hero-photo-brand{position:absolute;z-index:3;right:5%;top:7%;width:64px;height:64px;display:grid;place-items:center;border:1px solid #f5a87f55;border-radius:18px;background:#0b0b0ca6;backdrop-filter:blur(7px);box-shadow:0 9px 36px #0008}
-.hero-photo-brand .brand-icon{width:34px;height:34px}
-.hero-photo-brand .brand-icon i{background:#e66b41}
-.hero h1{max-width:860px}
-.hero-copy>p{color:#d6c6ba}
-.nav-cta{border-color:#25b992a6;background:#053a3350;color:#f6e8d9}
-.nav-cta:hover{background:#096753;border-color:#2dd7a7}
-.creative-paths{background:linear-gradient(180deg,transparent 0 86px,#0b0b0c 86px 100%)}
-.creative-path,.creative-path--emerald,.creative-path--charcoal{border-color:#e9876061;background:#101112}
-.creative-path--emerald{border-color:#239e7e80}
-.creative-path img{filter:contrast(1.035) saturate(1.025)}
-.creative-path-shade,.creative-path--emerald .creative-path-shade{
-  background:linear-gradient(0deg,rgba(5,7,8,.96) 0%,rgba(6,7,8,.65) 26%,rgba(5,7,8,.05) 73%);
-}
-.creative-path--paprika:after{background:none}
-.creative-path--emerald .creative-path-kicker{color:#64ddaf}
-.creative-path--emerald .creative-path-arrow{border-color:#39bc98;color:#7ce6c5}
-.creative-path-content{padding:26px}
-.service-card{background:#17191a;border-color:#ffffff24}
-.service-card:after,.services-grid .service-card:nth-child(2):after,.services-grid .service-card:nth-child(3):after{background:none}
-.service-image{filter:none;opacity:1}
-.service-card:before{
-  background:linear-gradient(0deg,rgba(6,7,8,.95),rgba(8,10,11,.7) 33%,rgba(9,9,9,.04) 79%);
-}
-.project-photo{filter:contrast(1.04) saturate(1.02)}
-.project-card:hover .project-photo{filter:contrast(1.04) saturate(1.04)}
-.project-card:nth-child(4) .project-visual:after{background:linear-gradient(0deg,rgba(5,9,9,.48),transparent 58%)}
-.services{background:#100f10}
-.work{background:#0b0b0d}
-@media(min-width:1051px){
-  .hero-photo{left:44%}
-  .creative-paths-grid{gap:18px}
-  .creative-path{min-height:300px}
-}
-@media(max-width:760px){
-  .hero{background:linear-gradient(120deg,#0b0b0c,#101415)}
-  .hero-photo{left:24%;right:-44%;top:26%;bottom:8%}
-  .hero-photo:before{background:linear-gradient(90deg,#0b0b0cf0,#0b0b0c86 50%,transparent),linear-gradient(0deg,#0b0b0c7c,transparent 48%)}
-  .hero-photo-brand{right:20%;width:48px;height:48px}
-  .creative-paths{background:linear-gradient(180deg,transparent 0 50px,#0b0b0c 50px)}
-}
-@media(max-width:570px){
-  .creative-paths{background:linear-gradient(180deg,transparent 0 30px,#0b0b0c 30px)}
-  .creative-path{min-height:185px}
-  .hero-photo{left:8%;right:-70%;top:33%;opacity:.68}
-  .hero-photo-brand{display:none}
-}
-
-
-/* KRASKIA 4.0 — traducción de la propuesta visual nº 3.
-   El esmeralda se reserva a la hoja de portafolio y a acentos; el coral sigue siendo la marca. */
-.hero{
- background:radial-gradient(ellipse 40% 48% at 95% 25%,rgba(6,70,51,.22),transparent 78%),#0b0b0c;
- min-height:760px; isolation:isolate;
-}
-.hero:after{background:none}
-.hero:before{
- content:"";position:absolute;z-index:0;pointer-events:none;
- width:460px;height:500px;left:-370px;top:-175px;
- border-radius:48%;background:linear-gradient(125deg,#e66b41,#9c361b);
- transform:rotate(-24deg);
-}
-.hero-glow{z-index:1!important;opacity:1!important;
- background:linear-gradient(90deg,#0b0b0c 0%,rgba(11,11,12,.98) 18%,rgba(11,11,12,.85) 34%,rgba(11,11,12,.27) 60%,transparent 90%);
-}
-.hero-inner{min-height:750px}
-.hero-photo{
- left:40%;right:-9%;top:13%;bottom:7%;border:0;border-radius:24px;
- box-shadow:0 34px 98px rgba(0,0,0,.64);
-}
-.hero-photo img{
- object-fit:cover;object-position:54% center;
- filter:none;
-}
-.hero-photo:before{
- background:linear-gradient(90deg,#0b0b0c 0%,rgba(11,11,12,.7) 17%,transparent 45%),
- linear-gradient(0deg,rgba(8,9,10,.7),transparent 25%);
-}
-.hero-photo-glow{display:none}
-.hero-photo-brand{display:none}
-.hero-copy{max-width:720px}
-.hero h1{font-size:clamp(56px,6.5vw,93px);line-height:1.06;max-width:730px}
-.hero-copy>p{color:#dbc9be;font-size:15px;max-width:425px}
-.hero-actions .btn-primary{background:#e66b41;box-shadow:0 12px 34px #ae40274d}
-.hero-actions .text-link{
- background:rgba(7,16,14,.53);border-color:#23b38f;
- color:#f6e8d9;padding:15px 19px;
-}
-.hero-actions .text-link:hover{background:rgba(7,91,73,.7)}
-.nav-cta{background:rgba(3,20,19,.56);border:1px solid #1bc49b}
-.nav-cta:hover{background:#085e4d}
-.creative-paths{background:linear-gradient(180deg,transparent 0 86px,#0b0b0c 86px)}
-.creative-paths-grid{gap:18px}
-.creative-path{
- min-height:298px;
- border:1px solid #c965466a;border-radius:24px;
- box-shadow:0 14px 35px #0009;
- background:#131110;
-}
-.creative-path img{filter:none;opacity:1}
-.creative-path-shade,.creative-path--emerald .creative-path-shade{
- background:linear-gradient(0deg,rgba(6,7,8,.94) 0%,rgba(6,7,8,.65) 24%,rgba(6,7,8,.04) 75%);
-}
-.creative-path--paprika:after{background:none}
-.creative-path--emerald{border-color:#18836893;background:#081d17}
-.creative-path--charcoal{border-color:#d26d496d;background:#19110f}
-.creative-path-content{gap:9px;padding:24px}
-.creative-path-content strong{font-size:clamp(25px,2vw,32px)}
-.creative-path--emerald .creative-path-kicker,.creative-path--emerald .creative-path-arrow{color:#6bd8b2}
-.creative-path--emerald .creative-path-arrow{border-color:#1ba786}
-@media(min-width:1051px){
- .hero-photo{left:40%;right:-10%}
- .hero-copy{padding-right:20px}
-}
-@media(max-width:760px){
- .hero{min-height:760px}
- .hero-photo{left:12%;right:-58%;top:29%;bottom:12%;opacity:.67}
- .hero-photo:before{background:linear-gradient(90deg,rgba(11,11,12,.91),rgba(11,11,12,.55) 60%,transparent),linear-gradient(0deg,rgba(11,11,12,.6),transparent 50%)}
- .hero h1{font-size:clamp(45px,9vw,72px)}
- .hero:before{left:-405px;top:-230px}
- .creative-paths{background:linear-gradient(180deg,transparent 0 50px,#0b0b0c 50px)}
- .creative-paths-grid{gap:10px}
- .creative-path{min-height:230px}
-}
-@media(max-width:570px){
- .hero-photo{left:-2%;right:-94%;top:35%;bottom:10%;opacity:.53}
- .hero h1{font-size:clamp(43px,10vw,58px)}
- .creative-paths{background:linear-gradient(180deg,transparent 0 30px,#0b0b0c 30px)}
- .creative-path{min-height:178px}
- .creative-path-content{padding:21px}
+  .hero { background:radial-gradient(ellipse 28% 25% at 100% 80%,rgba(8,127,101,.12),transparent),radial-gradient(ellipse at 80% 56%,#58291f,#0b0b0c 78%); }
 }
